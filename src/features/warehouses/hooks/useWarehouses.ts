@@ -1,1 +1,4 @@
-# placeholder — سيُستبدل بالكود الفعلي في وقته
+// Hook: React Query + State — Phase التالية
+export function useWarehouses() {
+  return {}
+}
