@@ -32,7 +32,7 @@ Page → Hook → Service → Repository → Supabase
 - [x] Phase 0: Architecture + Auth + Database Foundation
 
 **الحالي:**
-- [ ] Phase 1: Items Management
+- [ ] Phase 1: Items Management  
 
 **القادم:**
 - [ ] Phase 2: Warehouses
