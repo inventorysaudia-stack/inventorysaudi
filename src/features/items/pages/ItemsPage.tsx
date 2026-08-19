@@ -1,1 +1,7 @@
-# placeholder — سيُستبدل بالكود الفعلي في وقته
+export function ItemsPage() {
+  return (
+    <div>
+      <h1>Items</h1>
+    </div>
+  )
+}
