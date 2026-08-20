@@ -1,42 +1,60 @@
-import { NavLink } from "react-router-dom"
+
+import { NavLink } from 'react-router-dom'
 
 const navItems = [
-  { to: "/", label: "لوحة التحكم", icon: "ti-layout-dashboard", end: true },
-  { to: "/receipts", label: "دخول مخزون", icon: "ti-truck-delivery" },
-  { to: "/issues", label: "خروج مخزون", icon: "ti-arrow-up-right" },
-  { to: "/transfers", label: "تحويل مخزون", icon: "ti-arrows-left-right" },
-  { to: "/movements", label: "الحركات", icon: "ti-list" },
-  { to: "/items", label: "الأصناف", icon: "ti-package" },
-  { to: "/warehouses", label: "المخازن", icon: "ti-building-warehouse" },
-  { to: "/inventory-count", label: "الجرد", icon: "ti-clipboard-list" },
-  { to: "/reports", label: "التقارير", icon: "ti-chart-bar" },
-  { to: "/users", label: "المستخدمون", icon: "ti-users" },
+  { to: '/', label: 'لوحة التحكم', icon: '🏠', end: true },
+  { to: '/receipts', label: 'دخول مخزون', icon: '📥' },
+  { to: '/issues', label: 'خروج مخزون', icon: '📤' },
+  { to: '/transfers', label: 'تحويل مخزون', icon: '🔄' },
+  { to: '/movements', label: 'الحركات', icon: '📋' },
+  { to: '/items', label: 'الأصناف', icon: '📦' },
+  { to: '/warehouses', label: 'المخازن', icon: '🏭' },
+  { to: '/inventory-count', label: 'الجرد', icon: '📊' },
+  { to: '/reports', label: 'التقارير', icon: '📈' },
+  { to: '/users', label: 'المستخدمون', icon: '👥' },
 ]
 
 export function Sidebar() {
   return (
-    <aside style={{ width: 220, background: "#0a2f26", display: "flex", flexDirection: "column" }}>
-      <div style={{ padding: "1rem", borderBottom: "1px solid rgba(255,255,255,.1)" }}>
-        <span style={{ color: "#fff", fontWeight: 500, fontSize: 14 }}>نظام إدارة المخازن</span>
+    <aside style={{
+      width: 220,
+      background: 'var(--bg-sidebar)',
+      display: 'flex',
+      flexDirection: 'column',
+      flexShrink: 0,
+    }}>
+      <div style={{
+        padding: '16px',
+        borderBottom: '1px solid rgba(255,255,255,0.1)',
+        display: 'flex',
+        alignItems: 'center',
+        gap: 10,
+      }}>
+        <span style={{ fontSize: 24 }}>🏭</span>
+        <div>
+          <div style={{ color: '#fff', fontSize: 13, fontWeight: 500 }}>نظام إدارة المخازن</div>
+          <div style={{ color: 'rgba(255,255,255,0.4)', fontSize: 10 }}>v1.0</div>
+        </div>
       </div>
-      <nav style={{ flex: 1, padding: "0.5rem 0" }}>
+      <nav style={{ flex: 1, padding: '8px 0', overflowY: 'auto' }}>
         {navItems.map((item) => (
           <NavLink
             key={item.to}
             to={item.to}
             end={item.end}
             style={({ isActive }) => ({
-              display: "flex",
-              alignItems: "center",
-              gap: 8,
-              padding: "9px 14px",
-              color: isActive ? "#fff" : "rgba(255,255,255,.65)",
-              background: isActive ? "#1d9e75" : "transparent",
-              textDecoration: "none",
+              display: 'flex',
+              alignItems: 'center',
+              gap: 10,
+              padding: '9px 14px',
+              color: isActive ? 'var(--text-sidebar-active)' : 'var(--text-sidebar)',
+              background: isActive ? 'var(--bg-sidebar-active)' : 'transparent',
+              textDecoration: 'none',
               fontSize: 13,
+              transition: 'all 0.15s',
             })}
           >
-            <i className={`ti ${item.icon}`} />
+            <span style={{ fontSize: 16 }}>{item.icon}</span>
             {item.label}
           </NavLink>
         ))}
